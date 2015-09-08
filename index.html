@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Data Manager</title>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/sidebar_1.css">
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid header-Tab">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><span id="main_icon" class="glyphicon glyphicon-align-justify" data-toggle="offcanvas"></span><span class = "brandName">Event Name</span></a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="headbar-Active"><a href="#">Data</a></li>
+        <li><a href="#about">Show Setup</a></li>
+        <li><a href="#contact">Analytics</a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="glyphicon glyphicon-shopping-cart icons"></i>Cart<span class="badge">1</span></a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-cog icons"></i>Settings</a></li>
+        <li><a href="#"><i class = "glyphicon glyphicon-user icons"></i>John Doe</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<div class="container-fluid main-container">
+      <div class="row row-offcanvas row-offcanvas-left">
+        <nav class="sidebar sidebar-menu-expanded">
+	        <ul class="level1">
+	            <li class="active"> 
+		            <a class="expandable" href="#" title="Dashboard" style="padding: 4px; width: 100%;">
+		            	<span class="glyphicon glyphicon-user collapsed-element"></span>
+		            	<span class="expanded-element brand-name-title" style="display: inline;">Xueming Zhang</span>
+		            	<span class="expanded-element brand-name" style="display: inline;">Huawei Tech</span>	            	
+		          	</a>
+
+	                <ul class="level2 sidebar-nav" style="display: inline;">
+	                    <li class = "managerType" id = "managerType_0" data-target = "#badgeType">
+		                    <a href="#badgeType" class = "scroll">Badge Type</a>
+		                </li>
+		                <li class = "managerType" id = "managerType_1" data-target = "#badgeInfo">
+		                    <a href="#badgeInfo" class = "scroll">Badge Info</a>
+		                </li>
+		                <li class = "managerType" id = "managerType_2" data-target = "#demographics">
+		                    <a href="#demographics" class = "scroll">Demographics</a>
+		                </li>
+		                <li class = "managerType" id = "managerType_3" data-target = "#accounting">
+		                    <a href="#accounting" class = "scroll">Accounting</a>
+		                </li>
+		                <li class = "managerType" id = "managerType_4" data-target = "#notes">
+		                    <a href="#notes" class = "scroll">Notes</a>
+		                </li>
+		                <li class = "managerType" id = "managerType_5" data-target = "#history">
+		                    <a href="#history" class = "scroll">History</a>
+		                </li>
+	                </ul>
+	            </li>
+	        </ul> <a href="#" id="logout-icon" title="Logout">
+	        <span class="glyphicon glyphicon-off"></span>
+	      </a>
+
+	    </nav>
+        <div class="col-xs-12 col-sm-9 content" id = "badgeType">
+	    		<div class="dropdown pull-right">
+				    <button class="dropdown-toggle more-btn" type="button" id="menu1" data-toggle="dropdown">More
+				    <span class="caret"></span></button>
+				    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+				      <li role="presentation" class="dropdown-header">Find All in Group</li>
+				      <li role="presentation" class="divider"></li>
+				      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Print</a></li>
+				      <li class = "params" role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
+				      <li class = "params" role="presentation"><a role="menuitem" tabindex="-1" href="#">Badge</a></li>
+				      <li class = "params" role="presentation"><a role="menuitem" tabindex="-1" href="#">Label</a></li>
+				      <li class = "params" role="presentation"><a role="menuitem" tabindex="-1" href="#">Receipt</a></li>
+				      <li class = "params" role="presentation"><a role="menuitem" tabindex="-1" href="#">Tickets</a></li>
+				      <li role="presentation" class="divider"></li>
+				      <li role="presentation" class="dropdown-header">Registration Details</li>
+				      <li role="presentation" class="divider"></li>
+				      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Send</a></li>
+				      <li class = "params" role="presentation"><a role="menuitem" tabindex="-1" href="#">Email Confirmation</a></li>
+				      <li class = "params" role="presentation"><a role="menuitem" tabindex="-1" href="#">Receipt</a></li>
+				      <li class = "params" role="presentation"><a role="menuitem" tabindex="-1" href="#">Record</a></li>
+				      <li class = "params" role="presentation"><a role="menuitem" tabindex="-1" href="#">Registration Confirmation</a></li>
+				      <li role="presentation" class="divider"></li>
+				      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Trash</a></li>
+				      <li class = "params" role="presentation"><a role="menuitem" tabindex="-1" href="#">Move To Trash</a></li>
+				      <li class = "params" role="presentation"><a role="menuitem" tabindex="-1" href="#">View trash
+				    </ul>
+				</div>
+	        	<div class = "pull-right">
+		    		<button type="button" class = "save-btn" data-toggle="modal" data-target="#myModal">Save</button>
+		    	</div>
+          <h1 class = "managerType-Header">Badge Type</h1>
+          <div class = "col-xs-12 Heading-underline"></div>
+          <form class="form-horizontal manager-forms" role="form">
+            <div class="row">
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Member ID</label>
+                  <div class="col-md-8">
+                    <div class="right-inner-addon">
+				        <i class="glyphicon glyphicon-search"></i>
+				        <input type="search" class="form-control" id = "memberId_badgeType"/>
+				    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Piece Code</label>
+                  <div class="col-md-8">
+                    <div class="right-inner-addon">
+				        <i class="glyphicon glyphicon-lock"></i>
+				        <input type="text" class="form-control" id = "piececodeId_badgeType"/>
+				    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Member Status</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="memberstatusId_badgeType">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Priority Code</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="prioritycodeId_badgeType">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Org ID</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="ordId_badgeType">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Badge</label>
+                  <div class="col-md-8">
+                   <div class="right-inner-addon">
+				        <i class="glyphicon glyphicon-lock"></i>
+				        <input type="text" class="form-control" id = "badgeId_badgeType"/>
+				    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Registration Code</label>
+                  <div class="col-md-8">
+                    <div class="icon-addon addon-lg">
+	                    <select class="form-control" id = "regcodeId_badgeType">
+	                        <option>Select Option</option>
+	                        <option>Sample</option>
+	                        <option>Sample</option>
+	                    </select>
+	                </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Add Date</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="dateId_badgeType">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input9" class="col-md-4 control-label">Rate</label>
+                  <div class="col-md-8">
+                  	<div class = "col-md-3">
+	                    <input type="text" class="form-control col-md-2">
+                    </div>
+	                    <label class = "col-md-1">+</label>
+                    <div class = "col-md-3">
+	                    <input type="text" class="form-control">
+                    </div>
+	                    <label class = "col-md-1">=</label>
+                    <div class = "col-md-2">
+	                    <input type="text" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input10" class="col-md-4 control-label">Mail Date</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input10">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-xs-12 col-sm-9 content" id = "badgeInfo">
+          <h1 class = "managerType-Header">Badge Info</h1>
+          <div class = "col-xs-12 Heading-underline"></div>
+          <form class="form-horizontal manager-forms" role="form">
+            <div class="row">
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">First Name</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="firstname_badgeInfo">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Company</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="company_badgeInfo">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Last Name</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="lastname_badgeInfo">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Address</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="address_badgeInfo">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Title</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="title_badgeInfo">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">City</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="city_badgeInfo">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Email</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="email_badgeInfo">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">State</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="state_badgeInfo">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Alternate Email #1</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="altEmail_1_badgeInfo">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Zip Code</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="zipcode_badgeInfo">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-xs-12 col-sm-9 content" id = "demographics">
+          <h1 class = "managerType-Header">Demo Graphics</h1>
+          <div class = "col-xs-12 Heading-underline"></div>
+          <form class="form-horizontal manager-forms" role="form">
+            <div class="row">
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputEmail" class="col-md-4 control-label">Member ID</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputEmail">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputPassword" class="col-md-4 control-label">Piece Code</label>
+                  <div class="col-md-8">
+                    <input type="password" class="form-control" id="inputPassword">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputLabel3" class="col-md-4 control-label">Member Status</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputLabel3">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputLabel4" class="col-md-4 control-label">Priority Code</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputLabel4">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input5" class="col-md-4 control-label">Org ID</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input5">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input6" class="col-md-4 control-label">Badge</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input6">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input7" class="col-md-4 control-label">Registration Code</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input7">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input8" class="col-md-4 control-label">Add Date</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input8">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input9" class="col-md-4 control-label">Rate</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input9">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input10" class="col-md-4 control-label">Mail Date</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input10">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-xs-12 col-sm-9 content" id = "accounting">
+          <h1 class = "managerType-Header">Accounting</h1>
+          <div class = "col-xs-12 Heading-underline"></div>
+          <form class="form-horizontal manager-forms" role="form">
+            <div class="row">
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputEmail" class="col-md-4 control-label">Member ID</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputEmail">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputPassword" class="col-md-4 control-label">Piece Code</label>
+                  <div class="col-md-8">
+                    <input type="password" class="form-control" id="inputPassword">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputLabel3" class="col-md-4 control-label">Member Status</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputLabel3">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputLabel4" class="col-md-4 control-label">Priority Code</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputLabel4">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input5" class="col-md-4 control-label">Org ID</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input5">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input6" class="col-md-4 control-label">Badge</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input6">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input7" class="col-md-4 control-label">Registration Code</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input7">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input8" class="col-md-4 control-label">Add Date</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input8">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input9" class="col-md-4 control-label">Rate</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input9">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input10" class="col-md-4 control-label">Mail Date</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input10">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-xs-12 col-sm-9 content" id = "notes">
+          <h1 class = "managerType-Header">Notes</h1>
+          <div class = "col-xs-12 Heading-underline"></div>
+          <form class="form-horizontal manager-forms" role="form">
+            <div class="row">
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputEmail" class="col-md-4 control-label">Member ID</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputEmail">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputPassword" class="col-md-4 control-label">Piece Code</label>
+                  <div class="col-md-8">
+                    <input type="password" class="form-control" id="inputPassword">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputLabel3" class="col-md-4 control-label">Member Status</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputLabel3">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputLabel4" class="col-md-4 control-label">Priority Code</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputLabel4">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input5" class="col-md-4 control-label">Org ID</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input5">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input6" class="col-md-4 control-label">Badge</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input6">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input7" class="col-md-4 control-label">Registration Code</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input7">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input8" class="col-md-4 control-label">Add Date</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input8">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input9" class="col-md-4 control-label">Rate</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input9">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input10" class="col-md-4 control-label">Mail Date</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input10">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-xs-12 col-sm-9 content" id = "history">
+          <h1 class = "managerType-Header">History</h1>
+          <div class = "col-xs-12 Heading-underline"></div>
+          <form class="form-horizontal manager-forms" role="form">
+            <div class="row">
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputEmail" class="col-md-4 control-label">Member ID</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputEmail">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputPassword" class="col-md-4 control-label">Piece Code</label>
+                  <div class="col-md-8">
+                    <input type="password" class="form-control" id="inputPassword">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputLabel3" class="col-md-4 control-label">Member Status</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputLabel3">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="inputLabel4" class="col-md-4 control-label">Priority Code</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="inputLabel4">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input5" class="col-md-4 control-label">Org ID</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input5">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input6" class="col-md-4 control-label">Badge</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input6">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input7" class="col-md-4 control-label">Registration Code</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input7">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input8" class="col-md-4 control-label">Add Date</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input8">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input9" class="col-md-4 control-label">Rate</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input9">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="input10" class="col-md-4 control-label">Mail Date</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="input10">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="col-md-5">
+            <div class="panel panel-primary add-notes-primary-panel">
+                <div class="panel-heading add-notes-heading">Add notes</div>
+                <div class="panel-body add-notes-body">
+                    <div class="icon-addon addon-lg">
+	                    <select class="form-control add-notes-dropdown" id = "regcodeId_badgeType">
+	                        <option>Reason code</option>
+	                        <option>Add Person/Request Reg Form</option>
+	                        <option>Badge Status</option>
+	                        <option>Pomped Fees</option>
+	                        <option>Outbound Call</option>
+	                        <option>Update record</option>
+	                    </select>
+	                </div>
+
+	                <div class="form-group notes-area">
+	                  <textarea class="form-control add-notes-dropdown" rows="5" id="comment"></textarea>
+	                </div>
+                </div>
+                <div class="panel-footer add-notes-footer">
+				    <button type="button" class = "pull-right add-notes-save-btn">Save</button>
+                    <div class="input-group">
+                    	<span class = "add-notes-user">User ID:WRB0000</span></br>
+                    	<span class = "add-notes-user">REG UID:516500</span>
+                    	<!-- <div class = "pull-right">
+				    	</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog modal-md">
+	      <div class="modal-content">
+	        <div class="modal-header custome-modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Save Complete</h4>
+	        </div>
+	        <div class="modal-body custome-modal-body">
+	          <p class = "print-body-header">Print</p>
+	          	<div class = "print-options">
+		          	<label class="radio-inline">
+			        	<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> All
+			        </label>
+			        <label class="radio-inline">
+			        	<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Badge
+			        </label>
+			        <label class="radio-inline">
+			        	<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Label
+			        </label>
+			        <label class="radio-inline">
+			        	<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Receipt
+			        </label>
+			        <label class="radio-inline">
+			        	<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Tickets
+			        </label>
+		        </div>
+	        </div>
+	        <div class="modal-body custome-modal-body">
+	          	<p class = "print-body-header">Send</p>
+	          	<div class = "print-options">
+		          	<label class="radio-inline">
+			        	<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Email Confirmation
+			        </label>
+			        <label class="radio-inline">
+			        	<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Receipt
+			        </label>
+			        <label class="radio-inline">
+			        	<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Registration Confirmation
+			        </label>
+			        <form class="form-horizontal" role="form">
+	                  	<div class="form-group" class="col-sm-12">
+		                    <label  class="col-sm-1 control-label">From</label>
+		                    <div class="col-sm-5">
+		                        <input type="email" class="form-control"/>
+		                    </div>
+		                    <label class="col-sm-1 control-label"
+		                          for="inputPassword3" >To</label>
+		                    <div class="col-sm-5">
+		                        <input type="password" class="form-control"/>
+		                    </div>
+	                  	</div>
+	                  	<div class="form-group">
+		                    <label class="col-sm-2 control-label">Notes</label>
+		                    <div class="col-sm-12">
+		                        <textarea class="form-control add-notes-dropdown" rows="5" id="comment"></textarea>
+		                    </div>
+	                  </div>
+	                </form>
+		        </div>
+	        </div>  	
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	</div>
+    </div>
+
+</div><!-- /.container -->        
+    <script src=build/jquery-1.9.1.js></script>
+    <script src=build/jquery-niceScroll.min.js></script>
+    <script src=build/bootstrap.min.js></script>
+    <script src=script/main.js></script>
+  </body>
+</html>
+
+
+<!-- 9840597206 -->

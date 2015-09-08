@@ -1,0 +1,328 @@
+body {
+  /*padding-top: 50px;*/
+}
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+  height: 100%;
+}
+body {
+  /*padding-top: 70px;*/
+}
+footer {
+  /*padding: 30px 0;*/
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ * Greater thav 768px shows the menu by default and also flips the semantics
+ * The issue is to show menu for large screens and to hide for small
+ * Also need to do something clever to turn off the tabs for when the navigation is hidden
+ * Otherwise keyboard users cannot find the focus point
+ * (For now I will ignore that for mobile users and also not worry about
+ * screen re-sizing popping the menu out.)
+ */
+@media screen and (min-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    /*-webkit-transition: all .25s ease-out;
+       -moz-transition: all .25s ease-out;
+            transition: all .25s ease-out;*/
+  }
+
+  .row-offcanvas-right {
+    right: 25%;
+  }
+
+  .row-offcanvas-left {
+    left: 25%;
+  }
+
+  .row-offcanvas-right .sidebar-offcanvas {
+    right: -25%; /* 3 columns */
+    background-color: rgb(255, 255, 255);
+  }
+
+  .row-offcanvas-left .sidebar-offcanvas {
+    left: -26%; /* 3 columns */
+    background-color: rgb(255, 255, 255);
+
+  }
+
+  .row-offcanvas-right.active {
+    right: 0; /* 3 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 0; /* 3 columns */
+  }
+
+  .row-offcanvas-right.active .sidebar-offcanvas {
+    background-color: rgb(254, 254, 254);
+  }
+  .row-offcanvas-left.active .sidebar-offcanvas {
+    background-color: rgb(254, 254, 254);
+  }
+
+.row-offcanvas .content {
+    width: 75%; /* 9 columns */
+   /* -webkit-transition: all .25s ease-out;
+       -moz-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+*/
+  }
+
+  .row-offcanvas.active .content {
+    width: 100%; /* 12 columns */
+  }
+       
+  .sidebar-offcanvas {
+    position: absolute;
+    top: -20px;
+    width: 18%; /* 3 columns */
+    border: 1px solid #ABABAB;
+    height: 
+  }
+}
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    /*-webkit-transition: all .25s ease-out;
+       -moz-transition: all .25s ease-out;
+            transition: all .25s ease-out;*/
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: -21px;
+    width: 32%; /* 6 columns */
+  }
+  #sidebar-wrapper { 
+    left: 0px !important;
+    /*display: none;*/
+  }
+}
+.header-Tab{
+  background-color: #00567D;
+}
+.list-group-item{
+  border: none;
+}
+#main_icon{
+  padding-right: 10px;
+}
+/*#sidebar{
+    height: calc(100% + 22px);
+    border: 1px solid black;
+}*/
+
+.Heading-underline{
+  border: 1px solid #ABABAB;
+  width:100%;
+}
+
+.manager-forms{
+  margin-top: 50px;
+}
+
+.control-label{
+  text-align: left !important;
+}
+
+
+.sidebar-Active{
+    background-color: #F2F2F2;
+    border-left: 10px solid #6CC04A;
+}
+
+.headbar-Active{
+    background-color: #007297;
+    border-bottom: 3px solid #6CC04A;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+.icons{
+  padding-right: 8px;
+}
+.badge{
+  background-color: #fff;
+  color:#000;
+}
+.managerType-Header{
+  color:#007297;
+}
+.main-container{
+  position: absolute;
+  top:70px;
+}
+.text-wrap{
+    width: 5em;
+    border: 1px solid #000000;
+    word-wrap: break-word;
+    position: relative;
+    top: -28px;
+    left: 26px;
+}
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 30px;    
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.right-inner-addon {
+    position: relative;
+}
+.right-inner-addon input {
+    padding-right: 30px;    
+}
+.right-inner-addon i {
+    position: absolute;
+    right: 0px;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+.uneditable-input {
+    height: 42px;
+    font-size: 42px;
+    line-height: 35px;
+    width: 100%;
+}
+.span1 {
+    height: 42px;
+    font-size: 42px;
+}
+.save-btn{
+  background-color: #00567D;
+  color: #fff;
+  border: none;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 11px;
+  padding-right: 11px;
+}
+.add-notes-save-btn{
+  background-color: #00567D;
+  color: #fff;
+  border: none;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 11px;
+  padding-right: 11px; 
+}
+
+.add-notes-body{
+  display: none;
+}
+.add-notes-footer{
+  display: none;
+}
+
+.add-notes-primary-panel{
+    position: fixed;
+    bottom: 0px;
+    width: 274px;
+    right: 0px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    border-radius: 0px;
+    box-shadow: 0 0px 0px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 0px 0px rgba(0,0,0,.05);
+}
+.add-notes-heading{
+  text-align: center;
+  padding: 0px 0px;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  background-color: #00567D !important;
+  border: 1px solid #00567D !important;
+}
+.notes-area{
+  margin-top: 7px;
+}
+.add-notes-dropdown{
+  border-radius: 0px !important;
+}
+.add-notes-user{
+  color:#ABABAB;
+  font-size: 10px;  
+}
+.more-btn{
+  margin-left: 12px;
+  border-radius: 0px;
+  padding: 4px 7px;
+  background-color: #00567D;
+  color:#fff;
+  border: none;
+}
+.params{
+  margin-left: 23px !important;
+  font-size: 11px;
+}
+.more-btn:active, .more-btn.active, .save-btn:active, .save-btn.active {
+  background: red;
+}
+.dropdown-menu .divider{
+  background-color: #ABABAB;
+  margin: 0px 0;
+}
+.custome-modal-header{
+  padding: 10px;
+}
+.custome-modal-body{
+  padding: 3px; 
+}
+.print-body-header{
+  margin: 0px 15px 10px;
+  border-bottom: 1px solid #ABABAB;
+}
+.print-options{
+  margin-left: 13px;
+}
+
+h1:hover{
+  border-bottom:none ;
+}
+.navbar-nav li{
+  width : 166px !important;
+}

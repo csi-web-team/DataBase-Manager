@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Data Manager</title>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/sidebar_1.css">
+  </head>
+  <body>
+  	<h1>Hi this for web service</h1>
+  	<script src=build/jquery-1.9.1.js></script>
+  	<script>
+  	$(document).ready(function(){
+
+  		$.getJSON("./style.json", function (data){
+  			console.log(data, "hiiiiiiii");
+  		})
+  	})
+  	</script>>
+  </body>
+ </html>
